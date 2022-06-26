@@ -36,18 +36,21 @@ Recipe
  - name
  - description
  - directions
+ - picture (?)
  - ingredients
 
 Product
  - id
  - name
+ - picture (?)
  - TBD
 
 Ingredient
  - id
  - product_id -> Product.id
- - amount
+ - recipe_id -> Recipe.id
  - measurement -> Measurement.id
+ - amount
 
 Measurement
  - id
@@ -58,11 +61,12 @@ Measurement
 ### Project Structure
 
 server - backend api for project
+
 client - frontend ui for project
 
 
 ### Technologies
 
-Rust, TBD
-Typescript, React, Css, TBD
+Rust, Actix, PostgresQL, (db-access), TBD
+Vite, React, Typescript, CSS modules, TBD
 
