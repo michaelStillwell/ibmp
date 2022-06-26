@@ -1,0 +1,11 @@
+{
+  "name": "ibmp-app",
+  "version": "1.0.0",
+  "description": "> Name is TBD",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd server && cargo build"
+  },
+  "author": "",
+  "license": "ISC"
+}
