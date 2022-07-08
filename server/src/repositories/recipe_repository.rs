@@ -1,5 +1,4 @@
 use crate::models::db::{NewRecipe, Recipe};
-use crate::schema::ingredients::dsl::*;
 use crate::schema::recipes::dsl::*;
 use diesel::{ExpressionMethods, OptionalExtension, PgConnection, QueryDsl, RunQueryDsl};
 

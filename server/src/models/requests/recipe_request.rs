@@ -9,7 +9,7 @@ pub struct RecipeRequest {
     pub directions: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct NewRecipeRequest {
     pub name: String,
     pub description: Option<String>,

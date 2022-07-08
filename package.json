@@ -1,11 +1,19 @@
 {
-  "name": "ibmp-app",
-  "version": "1.0.0",
-  "description": "> Name is TBD",
-  "main": "index.js",
-  "scripts": {
-    "build": "cd server && cargo build"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "ibmp-app",
+    "version": "1.0.0",
+    "description": "> Name is TBD",
+    "main": "index.js",
+    "scripts": {
+        "build:server": "cd server && cargo build",
+        "build:client": "cd client && npm run build",
+        "build": "concurrently \"npm:build:*\"",
+        "start:server": "cd server && cargo watch -x 'run'",
+        "start:client": "cd client && npm run dev",
+        "start": "concurrently \"npm:start:*\""
+    },
+    "dependencies": {
+        "concurrently": "7.2.2"
+    },
+    "author": "",
+    "license": "ISC"
 }

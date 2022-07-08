@@ -1,18 +1,17 @@
 table! {
     ingredients (id) {
         id -> Int4,
-        recipe -> Nullable<Int4>,
-        product -> Nullable<Int4>,
+        recipe_id -> Nullable<Int4>,
+        product_id -> Nullable<Int4>,
         amount -> Nullable<Float8>,
-        measurement -> Nullable<Int4>,
+        measurement_id -> Nullable<Int4>,
     }
 }
 
 table! {
     measurements (id) {
         id -> Int4,
-        #[sql_name = "type"]
-        type_ -> Varchar,
+        name -> Varchar,
     }
 }
 
@@ -32,8 +31,13 @@ table! {
     }
 }
 
-joinable!(ingredients -> measurements (measurement));
-joinable!(ingredients -> products (product));
-joinable!(ingredients -> recipes (recipe));
+joinable!(ingredients -> measurements (measurement_id));
+joinable!(ingredients -> products (product_id));
+joinable!(ingredients -> recipes (recipe_id));
 
-allow_tables_to_appear_in_same_query!(ingredients, measurements, products, recipes,);
+allow_tables_to_appear_in_same_query!(
+    ingredients,
+    measurements,
+    products,
+    recipes,
+);

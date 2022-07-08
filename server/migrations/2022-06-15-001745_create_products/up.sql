@@ -28,6 +28,8 @@ CREATE TABLE ingredients (
 
 -- Seed tables
 
+-- NOTE: when seeding with serial ID, make sure not to assign the serial value, that will mess up the records.
+
 -- products
 INSERT INTO products (name) VALUES ('Banana');
 INSERT INTO products (name) VALUES ('Apple');
@@ -36,7 +38,7 @@ INSERT INTO products (name) VALUES ('Oats');
 INSERT INTO products (name) VALUES ('Spaghetti');
 
 ---- recipes
-INSERT INTO recipes VALUES (1, 'Banana Bread', 'Bread made out of bananas, bro.', 'not sure how to do this yet');
+INSERT INTO recipes (name, description, directions) VALUES ('Banana Bread', 'Bread made out of bananas, bro.', 'not sure how to do this yet');
 
 -- measurements
 --INSERT INTO measurements VALUES (1, 'cups');
