@@ -4,7 +4,7 @@ jobs:
   steps:
   - !PushRepository
     name: push sync
-    remoteUrl: https://github.com/michaelStillwell/ibmp
+    remoteUrl: https://github.com/michaelStillwell/ibmp.git
     userName: michaelStillwell
     passwordSecret: access-token
     withLfs: false
