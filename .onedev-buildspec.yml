@@ -5,7 +5,7 @@ jobs:
   - !PushRepository
     name: push sync
     remoteUrl: https://github.com/michaelStillwell/ibmp
-    userName: michael.stillwell@hotmail.com
+    userName: michaelStillwell
     passwordSecret: access-token
     withLfs: false
     force: true
