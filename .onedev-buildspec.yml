@@ -1,0 +1,18 @@
+version: 20
+jobs:
+- name: Sync to GitHub
+  steps:
+  - !PushRepository
+    name: push sync
+    remoteUrl: https://github.com/michaelStillwell/ibmp
+    userName: michael.stillwell@hotmail.com
+    passwordSecret: access-token
+    withLfs: false
+    force: true
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  triggers:
+  - !PullRequestMergeTrigger {}
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
+  timeout: 3600
