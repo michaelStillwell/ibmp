@@ -11,7 +11,8 @@ jobs:
     force: true
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   triggers:
-  - !PullRequestMergeTrigger {}
+  - !PullRequestMergeTrigger
+    branches: master dev
   retryCondition: never
   maxRetries: 3
   retryDelay: 30
