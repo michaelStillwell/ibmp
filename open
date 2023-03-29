@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# vscode is for the weak
+# code . --extensions-dir ./.workspace/
+
+if zellij list-sessions | rg "$SESSION_NAME"; then
+  echo "Attaching to session..."
+  zellij attach $SESSION_NAME
+else
+  echo "Session starting..."
+  zellij --layout "$LAYOUT_FILE" --session "$SESSION_NAME"
+fi
