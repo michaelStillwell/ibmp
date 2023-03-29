@@ -1,3 +1,54 @@
 layout {
-  pane name="nvim"
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="Server (root)" cwd="./server" focus=true {
+        pane split_direction="vertical" {
+            pane command="nvim"
+            pane stacked=true size="30%" {
+                pane name="tests" command="cargo" start_suspended=true {
+                    args "test"
+                }
+                pane name="running" command="cargo" start_suspended=true {
+                    args "watch" "-c" "-x" "run"
+                }
+            }
+        }
+    }
+    tab name="Client (root)" cwd="./client" {
+        pane split_direction="vertical" {
+            pane command="nvim"
+            pane stacked=true size="30%" {
+                pane name="tests" command="npm" start_suspended=true {
+                    args "run" "test"
+                }
+                pane name="running" command="npm" start_suspended=true {
+                    args "run" "dev"
+                }
+            }
+        }
+    }
+    tab name="Auth/Db" {
+        pane split_direction="vertical" {
+            pane name="Auth" cwd="./scripts" command="./auth.sh" start_suspended=true
+            pane name="Db" cwd="./scripts" command="./db.sh" start_suspended=true
+        }
+    }
+    tab name="Terminal" {
+        pane split_direction="vertical" {
+            pane name="server" cwd="./server"
+            pane name="db" cwd="./db"
+        }
+        pane split_direction="vertical" {
+            pane name="client" cwd="./client"
+            pane name="auth" cwd="./auth"
+        }
+    }
 }
+
