@@ -12,7 +12,7 @@ layout {
         pane split_direction="vertical" {
             pane command="nvim"
             pane stacked=true size="30%" {
-                pane name="Insomnia" cwd="../scripts" command="./insomnia.sh" start_suspended=true
+                pane name="insomnia" cwd="../scripts" command="./insomnia.sh" start_suspended=true
                 pane name="tests" command="cargo" start_suspended=true {
                     args "test"
                 }
@@ -26,7 +26,7 @@ layout {
         pane split_direction="vertical" {
             pane command="nvim"
             pane stacked=true size="30%" {
-                pane name="Browser" cwd="../scripts" command="./browser.sh" start_suspended=true
+                pane name="browser" cwd="../scripts" command="./browser.sh" start_suspended=true
                 pane name="tests" command="npm" start_suspended=true {
                     args "run" "test"
                 }
